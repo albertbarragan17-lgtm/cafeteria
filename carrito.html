@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tu Canasta Artesanal · Sierra Yara Café</title>
+  <meta name="description" content="Revisa los productos, personaliza tu pedido y finaliza la compra en Sierra Yara Café.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+</head>
+<body data-page="carrito" class="bg-surface text-on-surface font-body-md text-body-md antialiased">
+
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,24,16,0.05)] border-b border-outline-variant/40">
+    <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm shrink-0">
+        <a class="flex items-center gap-space-sm" href="index.html">
+          <img alt="Sierra Yara Café Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Dw7lbS0418jBCjqogvqCi5ObQuKkPSAGw90rlom4n0xoqnWF3q52FkuGSgPa_IthEStFCYg0dIf36926lOSQexO4xSaLutJNk01yZxYVvVGZnzJKwPyQkqG4aWeYkyb_DGPYibSJqNQpU1m5rAC_qKkxa6vwysA86CPvTU2_XwNH7kHm2WCOQ06i55xOYkafscu21DzhvS7S3hKinu6bzXEvyqAUD5RLL9Zf9AiXaOKMgdJF8Tem">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">Sierra Yara</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Café de Especialidad &amp; Origen</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav hidden lg:flex items-center gap-space-lg">
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="inicio" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="menu" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="nosotros" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="ubicaciones" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="contacto" href="index.html#extraccion">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-space-md">
+        <div class="relative hidden md:flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+          <input class="w-56 lg:w-64 pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-secondary transition-all" placeholder="Buscar café, repostería..." type="text">
+        </div>
+        <a aria-label="Carrito de compra" class="relative flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface bg-surface-container" href="carrito.html">
+          <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+          <span class="cart-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-[20px] px-1 bg-primary-container text-on-primary font-label-sm text-[11px] font-bold rounded-full shadow-sm" data-cart-badge>0</span>
+        </a>
+        <div class="hidden md:flex items-center pl-space-xs">
+          <a class="flex items-center rounded-full ring-1 ring-outline-variant/60 hover:ring-secondary transition-all" href="#">
+            <img alt="Perfil" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA_wbV3JA8WbVcGPImXpKvNpcBcxstzW-Qp7qXy0MLUDC4zPyA6K03qKIsyAw3zkZ1Zcp__iEWZ2e00mJBenGg7NoL8zymkQitmP9WgNoQo-OUPFX4obv0AC57IJ5b3n9uO2gNvHohJ04DEnLq7aOyCP2IsdFGkZHy9ynN_XG8c75pE8kfI2BOrbnJoKWOoPvgASothMnW7QihCbmdJ8Iq-o5isTQh3QpdDbf1Yj9z6XZB__2UHBxe">
+          </a>
+        </div>
+        <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-surface border-t border-outline-variant/40 shadow-lg">
+      <nav class="max-w-7xl mx-auto px-gutter py-4 flex flex-col gap-2">
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <section class="max-w-7xl mx-auto px-gutter w-full pt-space-lg">
+      <div class="flex flex-col md:flex-row md:items-end justify-between pb-space-lg gap-space-md">
+        <div>
+          <div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm uppercase tracking-widest mb-space-xs">
+            <span class="inline-block w-2 h-2 rounded-full bg-secondary"></span>
+            <span>Boutique &amp; Cosecha</span>
+            <span class="opacity-40">/</span>
+            <span>Reserva Sensorial</span>
+          </div>
+          <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Tu Canasta Artesanal</h1>
+        </div>
+        <nav aria-label="Progreso de compra" class="inline-flex items-center bg-surface-container-low p-1.5 rounded-full shadow-sm self-start md:self-auto">
+          <div class="flex items-center gap-space-xs px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md shadow-sm">
+            <span class="flex items-center justify-center w-5 h-5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-bold">1</span>
+            <span>Carrito</span>
+          </div>
+          <div class="w-4 h-px bg-outline-variant/60 mx-1"></div>
+          <a class="flex items-center gap-space-xs px-3.5 py-2 rounded-full text-on-surface-variant font-label-md text-label-md opacity-70 hover:opacity-100 transition-opacity" href="checkout.html">
+            <span class="flex items-center justify-center w-5 h-5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-semibold">2</span>
+            <span>Pago</span>
+          </a>
+          <div class="w-4 h-px bg-outline-variant/60 mx-1"></div>
+          <div class="flex items-center gap-space-xs px-3.5 py-2 rounded-full text-on-surface-variant font-label-md text-label-md opacity-50">
+            <span class="flex items-center justify-center w-5 h-5 rounded-full bg-surface-container text-on-surface-variant text-[11px] font-semibold">3</span>
+            <span>Confirmación</span>
+          </div>
+        </nav>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+        <div class="lg:col-span-7 xl:col-span-8 flex flex-col gap-space-lg">
+          <div class="flex items-center justify-between bg-surface-container-low px-space-lg py-3.5 rounded-xl shadow-sm">
+            <div class="flex items-center gap-space-xs">
+              <span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+              <span class="font-title-md text-title-md text-on-surface font-semibold" id="cart-counter-label">0 productos en tu canasta</span>
+            </div>
+            <button class="group inline-flex items-center gap-1.5 font-label-md text-label-md text-on-surface-variant hover:text-error transition-colors px-2.5 py-1 rounded-lg hover:bg-surface-container" onclick="clearCart()" type="button">
+              <span class="material-symbols-outlined text-[18px] group-hover:scale-110 transition-transform">delete_sweep</span>
+              <span>Vaciar carrito</span>
+            </button>
+          </div>
+
+          <div class="flex flex-col gap-space-md" id="cart-items-container"></div>
+
+          <div class="p-space-lg bg-surface-container-low rounded-xl shadow-sm flex flex-col gap-space-sm">
+            <label class="flex items-center gap-2 font-title-md text-title-md text-on-surface font-semibold" for="barista-notes">
+              <span class="material-symbols-outlined text-secondary text-[20px]">edit_note</span>
+              <span>Instrucciones especiales para el Barista</span>
+            </label>
+            <div class="relative">
+              <textarea class="w-full p-space-md rounded-lg bg-surface-container-lowest text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-all resize-none shadow-inner" id="barista-notes" placeholder="Ej. Por favor empacar los granos con válvula desgasificadora sellada y dejar el Flat White extra caliente..." rows="2"></textarea>
+              <div class="absolute bottom-2.5 right-3 text-on-surface-variant/60 font-label-sm text-[11px] flex items-center gap-1 pointer-events-none">
+                <span class="material-symbols-outlined text-[14px]">sentiment_satisfied</span> Hecho con amor artesanal
+              </div>
+            </div>
+          </div>
+
+          <div class="p-space-md rounded-xl bg-secondary-container/40 flex items-center gap-space-md text-on-secondary-container">
+            <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center flex-shrink-0 shadow-sm">
+              <span class="material-symbols-outlined text-[22px]">energy_savings_leaf</span>
+            </div>
+            <div class="flex flex-col text-sm">
+              <span class="font-title-md text-title-md font-semibold text-secondary leading-snug">Empaque 100% Compostable &amp; Grano Tostado Semanal</span>
+              <p class="font-body-sm text-body-sm text-on-secondary-container/90 mt-0.5">Cada bebida es elaborada respetando los tiempos de molienda y temperatura del agua de vertido.</p>
+            </div>
+          </div>
+        </div>
+
+        <aside class="lg:col-span-5 xl:col-span-4 flex flex-col gap-space-md lg:sticky lg:top-24">
+          <div class="bg-surface-container-low p-space-lg rounded-xl shadow-md flex flex-col gap-space-md">
+            <div>
+              <span class="block font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider mb-2">Modalidad de Pedido</span>
+              <div class="grid grid-cols-2 p-1 bg-surface-container rounded-lg gap-1">
+                <button class="flex flex-col items-center justify-center py-2.5 px-2 rounded-md font-label-md text-label-md transition-all bg-primary text-on-primary shadow-sm font-semibold" id="tab-pickup" type="button">
+                  <span class="material-symbols-outlined text-[20px] mb-0.5">storefront</span>
+                  <span>Recoger en tienda</span>
+                </button>
+                <button class="flex flex-col items-center justify-center py-2.5 px-2 rounded-md font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-all font-medium" id="tab-dinein" type="button">
+                  <span class="material-symbols-outlined text-[20px] mb-0.5">local_cafe</span>
+                  <span>Consumir en local</span>
+                </button>
+              </div>
+              <div class="flex items-center gap-1.5 mt-2.5 text-secondary font-label-sm text-label-sm">
+                <span class="material-symbols-outlined text-[16px]">pin_drop</span>
+                <span id="mode-detail-text">Sucursal: Sierra Yara Centro (Calle de la Candelaria 45)</span>
+              </div>
+            </div>
+
+            <div class="p-3.5 rounded-lg bg-surface-container-lowest shadow-sm flex flex-col gap-2.5">
+              <div class="flex items-center justify-between text-on-surface">
+                <span class="font-label-md text-label-md font-semibold flex items-center gap-1.5">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+                  Horario de Preparación
+                </span>
+                <span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-bold">Sin Espera</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                <div class="relative">
+                  <select class="w-full pl-3 pr-8 py-2 bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:ring-1 focus:ring-secondary">
+                    <option selected="">Hoy, 24 Octubre</option>
+                    <option>Mañana, 25 Octubre</option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[18px]">expand_more</span>
+                </div>
+                <div class="relative">
+                  <select class="w-full pl-3 pr-8 py-2 bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface appearance-none focus:outline-none focus:ring-1 focus:ring-secondary">
+                    <option selected="">En 15-20 min (10:30 AM)</option>
+                    <option>En 30-40 min (10:50 AM)</option>
+                    <option>Programar: 11:30 AM</option>
+                    <option>Programar: 14:00 PM</option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-2.5 top-2.5 text-on-surface-variant pointer-events-none text-[18px]">schedule</span>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <label class="block font-label-sm text-label-sm text-on-surface-variant font-bold uppercase tracking-wider mb-1.5" for="coupon-code">Cupón o Fidelidad</label>
+              <div class="flex gap-2">
+                <div class="relative flex-1">
+                  <input class="w-full uppercase pl-3 pr-8 py-2 rounded-lg bg-surface-container-lowest font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-secondary shadow-inner" id="coupon-code" placeholder="Código de descuento" type="text">
+                  <span class="material-symbols-outlined absolute right-2.5 top-2.5 text-secondary text-[18px]">verified</span>
+                </div>
+                <button class="px-4 py-2 bg-secondary text-on-secondary rounded-lg font-label-md text-label-md hover:bg-on-secondary-container transition-colors shadow-sm" id="coupon-apply" type="button">Aplicar</button>
+              </div>
+              <div class="hidden flex items-center justify-between mt-2 px-3 py-1.5 rounded-lg bg-secondary-container/60 text-on-secondary-container font-label-sm text-label-sm" id="coupon-applied">
+                <span class="inline-flex items-center gap-1 font-semibold">
+                  <span class="material-symbols-outlined text-[16px]">loyalty</span> CÓDIGO: ORIGEN10 aplicado (-10%)
+                </span>
+                <button class="text-on-secondary-container/70 hover:text-error transition-colors" id="coupon-remove" type="button">
+                  <span class="material-symbols-outlined text-[16px]">close</span>
+                </button>
+              </div>
+              <p class="hidden mt-1.5 text-error font-label-sm text-label-sm" id="coupon-error">Código inválido. Prueba con ORIGEN10.</p>
+            </div>
+
+            <div class="pt-2 flex flex-col gap-2.5 border-t border-outline-variant/30 font-body-md text-body-md text-on-surface-variant">
+              <div class="flex justify-between items-center">
+                <span id="summary-items-label">Subtotal productos (0 ítems)</span>
+                <span class="font-title-md text-title-md text-on-surface" id="summary-subtotal">$0.00</span>
+              </div>
+              <div class="flex justify-between items-center text-secondary">
+                <span class="flex items-center gap-1"><span>Descuento fidelidad (ORIGEN10)</span></span>
+                <span class="font-title-md text-title-md font-semibold" id="summary-discount">$0.00</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span>Impuestos estimados (IVA 8%)</span>
+                <span class="font-title-md text-title-md text-on-surface" id="summary-tax">$0.00</span>
+              </div>
+              <div class="pt-3 mt-1 flex justify-between items-end border-t border-outline-variant/40">
+                <div class="flex flex-col">
+                  <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Total a Pagar</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant/70">Precios en USD (incluye tasas)</span>
+                </div>
+                <div class="text-right">
+                  <span class="font-headline-lg text-headline-lg font-bold text-primary tracking-tight" id="summary-total">$0.00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-2.5 pt-1">
+              <button class="w-full py-4 px-6 rounded-xl bg-primary text-on-primary font-title-lg text-title-lg font-semibold flex items-center justify-center gap-space-sm shadow-md hover:bg-secondary transition-all hover:scale-[1.01] active:scale-[0.99] group" id="checkout-btn" type="button">
+                <span class="material-symbols-outlined text-[20px] text-primary-fixed-dim group-hover:rotate-12 transition-transform">lock</span>
+                <span>Proceder al Pago</span>
+                <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              </button>
+              <div class="flex items-center justify-center gap-2 text-center text-on-surface-variant font-label-sm text-label-sm pt-1">
+                <span class="material-symbols-outlined text-secondary text-[16px]">coffee_maker</span>
+                <span>Café preparado al momento justo antes de tu llegada para máxima frescura</span>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-around pt-3 border-t border-outline-variant/30 text-on-surface-variant/70 text-[11px] font-label-sm">
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">verified_user</span> Pago Seguro 256-bit</span>
+              <span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">eco</span> Empaque Residuo Cero</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="w-full bg-surface-container-low border-t border-outline-variant/30 mt-space-xl">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-outline-variant/20">
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-headline-sm text-headline-sm text-on-surface">Sierra Yara Café</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Cultivado en las altas pendientes de niebla andina y tostado artesanalmente bajo estándares de comercio justo y regenerativo.</p>
+          <div class="inline-flex items-center gap-space-xs mt-space-xs px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container w-fit">
+            <span class="material-symbols-outlined text-[16px]">eco</span>
+            <span class="font-label-sm text-label-sm font-semibold">Finca Sostenible Certificada</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Horario de Cosecha &amp; Barra</span>
+          <div class="font-body-sm text-body-sm text-on-surface-variant space-y-1.5">
+            <div>
+              <p class="font-semibold text-on-surface">Lunes a Viernes</p>
+              <p>07:00 – 20:30 hrs</p>
+            </div>
+            <div>
+              <p class="font-semibold text-on-surface">Sábados &amp; Domingos</p>
+              <p>08:00 – 21:00 hrs</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Explorar Origen</span>
+          <ul class="font-body-sm text-body-sm text-on-surface-variant space-y-2">
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#menu">Varietales Geisha &amp; Borbón</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Métodos de Extracción</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Trazabilidad de Productores</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Nuestras Barras &amp; Terrazas</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Boletín de Tostaduría</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Suscríbete para lanzamientos exclusivos de microlotes y catas sensoriales.</p>
+          <form class="flex flex-col gap-2 mt-1" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('¡Gracias por suscribirte!');">
+            <input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/60 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary" placeholder="tu-correo@sierrayara.com" type="email">
+            <button class="w-full px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+        <div>© 2024 Sierra Yara Café. Creado con reverencia a la tierra y al grano.</div>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-on-surface transition-colors" href="#">Instagram</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Journal</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Privacidad</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/carrito.js"></script>
+</body>
+</html>

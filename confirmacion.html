@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmación de Pedido · Sierra Yara Café</title>
+  <meta name="description" content="Tu pedido está en preparación. Sigue el estado en vivo en Sierra Yara Café.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+</head>
+<body data-page="confirmacion" class="bg-surface text-on-surface font-body-md text-body-md antialiased">
+
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,24,16,0.05)] border-b border-outline-variant/40">
+    <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm shrink-0">
+        <a class="flex items-center gap-space-sm" href="index.html">
+          <img alt="Sierra Yara Café Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Dw7lbS0418jBCjqogvqCi5ObQuKkPSAGw90rlom4n0xoqnWF3q52FkuGSgPa_IthEStFCYg0dIf36926lOSQexO4xSaLutJNk01yZxYVvVGZnzJKwPyQkqG4aWeYkyb_DGPYibSJqNQpU1m5rAC_qKkxa6vwysA86CPvTU2_XwNH7kHm2WCOQ06i55xOYkafscu21DzhvS7S3hKinu6bzXEvyqAUD5RLL9Zf9AiXaOKMgdJF8Tem">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">Sierra Yara</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Café de Especialidad &amp; Origen</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav hidden lg:flex items-center gap-space-lg">
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="inicio" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="menu" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="nosotros" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="ubicaciones" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="contacto" href="index.html#extraccion">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-space-md">
+        <a aria-label="Carrito de compra" class="relative flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface" href="index.html#menu">
+          <span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+        </a>
+        <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-surface border-t border-outline-variant/40 shadow-lg">
+      <nav class="max-w-7xl mx-auto px-gutter py-4 flex flex-col gap-2">
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <div class="w-full relative overflow-hidden bg-surface py-space-xl">
+      <div class="absolute top-10 right-1/4 w-96 h-96 rounded-full bg-secondary-container/25 blur-3xl pointer-events-none -z-10"></div>
+      <div class="absolute bottom-10 left-1/6 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-3xl pointer-events-none -z-10"></div>
+      <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-xl">
+
+        <section class="flex flex-col items-center text-center max-w-3xl mx-auto">
+          <div class="relative flex items-center justify-center mb-space-md">
+            <div class="w-24 h-24 rounded-full bg-secondary-container/40 flex items-center justify-center animate-pulse"></div>
+            <div class="absolute w-16 h-16 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg">
+              <span class="material-symbols-outlined text-[32px] text-secondary-fixed">check</span>
+            </div>
+            <div class="absolute -top-1 -right-2 bg-surface-container-lowest p-2 rounded-full shadow-md text-on-surface">
+              <span class="material-symbols-outlined text-[20px] text-secondary">local_cafe</span>
+            </div>
+          </div>
+          <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold mb-space-xs">
+            Confirmación Oficial · Grano de Altura
+          </span>
+          <h1 class="font-display-hero text-headline-lg md:text-display-hero-mobile lg:text-display-hero text-on-surface tracking-tight leading-tight">
+            ¡Gracias por tu pedido en Sierra Yara Café!
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm max-w-2xl leading-relaxed">
+            Tu orden <span class="font-title-md text-on-surface font-semibold bg-surface-container px-2 py-0.5 rounded" id="hero-order-number">#SY-0000</span> ha sido recibida y enviada directamente a la barra de nuestros baristas artesanos.
+          </p>
+          <div class="mt-space-md inline-flex items-center gap-space-xs px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md">
+            <span class="material-symbols-outlined text-[18px] text-secondary">schedule</span>
+            <span>Tiempo estimado de barra: <strong class="text-on-surface font-semibold">8 minutos</strong></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+            <span>Recogida a las <strong class="text-on-surface font-semibold">10:35 AM</strong></span>
+          </div>
+        </section>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+          <div class="lg:col-span-7 flex flex-col gap-space-lg">
+            <section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+              <div class="flex items-center justify-between pb-space-md mb-space-md">
+                <div>
+                  <span class="font-label-sm text-label-sm uppercase text-secondary font-bold tracking-wider">Monitoreo Sensorial</span>
+                  <h2 class="font-headline-sm text-headline-sm text-on-surface mt-0.5">Progreso en Vivo</h2>
+                </div>
+                <div class="flex items-center gap-1.5 px-3 py-1 bg-secondary/10 rounded-full">
+                  <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
+                  <span class="font-label-sm text-label-sm text-secondary font-semibold" id="live-status-text">Tostando &amp; Prensando</span>
+                </div>
+              </div>
+
+              <div class="relative flex flex-col gap-space-lg pl-2">
+                <div class="flex items-start gap-space-md relative">
+                  <div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0 z-10 shadow-sm">
+                    <span class="material-symbols-outlined text-[20px]">check</span>
+                  </div>
+                  <div class="flex flex-col pt-1">
+                    <div class="flex items-center gap-2">
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">Pedido Confirmado</span>
+                      <span class="font-label-sm text-label-sm text-on-surface-variant">10:25 AM</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Ticket generado y asignado a estación de filtrado.</p>
+                  </div>
+                  <div class="absolute top-10 left-5 -ml-[1px] w-0.5 h-12 bg-secondary"></div>
+                </div>
+
+                <div class="flex items-start gap-space-md relative" id="step-prep">
+                  <div class="w-10 h-10 rounded-full bg-primary-container text-tertiary-fixed flex items-center justify-center shrink-0 z-10 ring-4 ring-tertiary-fixed-dim/40 animate-pulse">
+                    <span class="material-symbols-outlined text-[20px]">skillet</span>
+                  </div>
+                  <div class="flex flex-col pt-1 flex-1">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <span class="font-title-md text-title-md text-on-surface font-semibold">En Preparación por Barista <span id="barista-name">Sarah</span></span>
+                      <img class="w-8 h-8 rounded-full object-cover ring-2 ring-secondary-container" src="assets/img/barista.jpg" alt="Barista Sierra Yara"/>
+                      <span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Activo</span>
+                    </div>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Molienda fresca de lote Geisha y texturizado de leche de avena orgánica.</p>
+                    <div class="w-full bg-surface-container mt-space-sm rounded-full h-2 overflow-hidden max-w-md">
+                      <div class="bg-secondary h-full rounded-full transition-all duration-1000 ease-out" id="step-progress" style="width: 66%;"></div>
+                    </div>
+                  </div>
+                  <div class="absolute top-10 left-5 -ml-[1px] w-0.5 h-12 bg-surface-container-high"></div>
+                </div>
+
+                <div class="flex items-start gap-space-md relative" id="step-ready">
+                  <div class="w-10 h-10 rounded-full bg-surface-container-high text-on-surface-variant flex items-center justify-center shrink-0 z-10">
+                    <span class="material-symbols-outlined text-[20px]">countertops</span>
+                  </div>
+                  <div class="flex flex-col pt-1 opacity-70">
+                    <span class="font-title-md text-title-md text-on-surface font-semibold">Listo para Recoger en Barra</span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Bandeja rotulada con tu nombre en el mostrador principal.</p>
+                  </div>
+                  <div class="absolute top-10 left-5 -ml-[1px] w-0.5 h-12 bg-surface-container-high"></div>
+                </div>
+
+                <div class="flex items-start gap-space-md relative">
+                  <div class="w-10 h-10 rounded-full bg-surface-container text-outline-variant flex items-center justify-center shrink-0 z-10">
+                    <span class="material-symbols-outlined text-[20px]">verified</span>
+                  </div>
+                  <div class="flex flex-col pt-1 opacity-40">
+                    <span class="font-title-md text-title-md text-on-surface font-semibold">Entregado</span>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">¡A disfrutar tu experiencia sensorial!</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="bg-surface-container-low rounded-xl p-space-lg shadow-sm flex flex-col gap-space-md">
+              <div class="flex flex-col md:flex-row md:items-center justify-between gap-space-sm">
+                <div class="flex items-start gap-space-sm">
+                  <div class="p-2.5 rounded-lg bg-surface-container-highest text-secondary">
+                    <span class="material-symbols-outlined text-[24px]">storefront</span>
+                  </div>
+                  <div>
+                    <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Punto de Retiro</span>
+                    <h3 class="font-title-lg text-title-lg text-on-surface" id="pickup-title">Sierra Yara - Centro Histórico</h3>
+                    <p class="font-body-sm text-body-sm text-on-surface-variant">Calle Real #42, Casa Colonial de los Arcos</p>
+                  </div>
+                </div>
+                <a class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-surface-container transition-colors text-label-md font-label-md shadow-xs self-start md:self-auto" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+                  <span class="material-symbols-outlined text-[18px] text-secondary">near_me</span>
+                  <span>Cómo llegar</span>
+                </a>
+              </div>
+              <div class="w-full h-44 rounded-lg bg-surface-container-highest relative overflow-hidden flex items-center justify-center shadow-inner">
+                <svg class="absolute inset-0 w-full h-full opacity-40" preserveAspectRatio="none" viewbox="0 0 400 176">
+                  <path d="M0,40 C100,10 150,90 250,55 S380,95 400,60" fill="none" stroke="#e4e2de" stroke-width="14"/>
+                  <path d="M0,120 C120,95 200,150 300,120 S380,140 400,130" fill="none" stroke="#e4e2de" stroke-width="18"/>
+                  <path d="M60,0 L70,176 M140,0 L132,176 M300,0 L312,176 M360,0 L352,176" stroke="#efeeea" stroke-width="10"/>
+                </svg>
+                <div class="absolute inset-0 bg-primary-container/10"></div>
+                <div class="relative z-10 flex flex-col items-center bg-surface-container-lowest/95 px-4 py-2.5 rounded-xl shadow-md text-center">
+                  <span class="material-symbols-outlined text-[28px] text-secondary">location_on</span>
+                  <span class="font-title-md text-title-md font-semibold text-on-surface mt-0.5">Mostrador Barra #1</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant">Presenta tu ticket o QR</span>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          <div class="lg:col-span-5 flex flex-col gap-space-lg">
+            <div class="bg-primary-container text-on-primary rounded-xl p-space-lg flex flex-col items-center text-center shadow-md relative overflow-hidden">
+              <div class="absolute -top-12 -left-12 w-36 h-36 rounded-full bg-secondary/20 blur-2xl"></div>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-on-primary-container/20 text-tertiary-fixed font-label-sm text-label-sm mb-space-sm">
+                <span class="material-symbols-outlined text-[16px]">qr_code_scanner</span>
+                <span>Pase Rápido de Barra</span>
+              </div>
+              <h3 class="font-headline-sm text-headline-sm text-on-primary tracking-tight">Código de Retiro Rápido</h3>
+              <p class="font-body-sm text-body-sm text-tertiary-fixed-dim/90 mt-1 mb-space-md max-w-xs">
+                Presenta este código QR en el mostrador para retirar tu pedido sin filas.
+              </p>
+              <div class="p-4 bg-surface-container-lowest rounded-xl shadow-lg relative group">
+                <svg class="w-44 h-44 text-primary" fill="currentColor" viewbox="0 0 100 100">
+                  <path d="M10,10 h24 v24 h-24 z M14,14 v16 h16 v-16 z M18,18 h8 v8 h-8 z"></path>
+                  <path d="M66,10 h24 v24 h-24 z M70,14 v16 h16 v-16 z M74,18 h8 v8 h-8 z"></path>
+                  <path d="M10,66 h24 v24 h-24 z M14,70 v16 h16 v-16 z M18,74 h8 v8 h-8 z"></path>
+                  <rect height="6" width="6" x="42" y="12"></rect>
+                  <rect height="6" width="6" x="52" y="12"></rect>
+                  <rect height="6" width="6" x="42" y="24"></rect>
+                  <rect height="6" width="6" x="48" y="32"></rect>
+                  <rect height="6" width="6" x="12" y="42"></rect>
+                  <rect height="6" width="6" x="24" y="42"></rect>
+                  <rect height="6" width="6" x="32" y="48"></rect>
+                  <rect height="6" width="6" x="12" y="54"></rect>
+                  <rect height="16" width="16" x="42" y="42"></rect>
+                  <rect height="6" width="6" x="66" y="42"></rect>
+                  <rect height="6" width="12" x="78" y="42"></rect>
+                  <rect height="6" width="8" x="66" y="54"></rect>
+                  <rect height="8" width="8" x="82" y="54"></rect>
+                  <rect height="12" width="6" x="42" y="66"></rect>
+                  <rect height="16" width="6" x="52" y="74"></rect>
+                  <rect height="6" width="6" x="42" y="84"></rect>
+                  <rect height="6" width="12" x="66" y="70"></rect>
+                  <rect height="6" width="8" x="82" y="70"></rect>
+                  <rect height="8" width="20" x="70" y="82"></rect>
+                </svg>
+                <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-sm">
+                    <span class="material-symbols-outlined text-[18px]">local_cafe</span>
+                  </div>
+                </div>
+              </div>
+              <span class="font-label-md text-label-md text-tertiary-fixed font-bold tracking-widest mt-space-md" id="qr-order-number">SY - 0000</span>
+            </div>
+
+            <section class="bg-surface-container-lowest rounded-xl p-space-lg shadow-sm">
+              <div class="flex items-center justify-between pb-space-sm mb-space-sm">
+                <span class="font-title-md text-title-md text-on-surface font-semibold">Detalles del Pedido</span>
+                <span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-2.5 py-0.5 rounded-full" id="conf-item-count">0 Productos</span>
+              </div>
+              <div class="flex flex-col gap-space-md" id="conf-items-list"></div>
+              <div class="mt-space-md pt-space-md bg-surface-container-low p-space-md rounded-lg flex flex-col gap-1.5">
+                <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                  <span>Subtotal</span>
+                  <span id="conf-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between font-body-sm text-body-sm text-secondary" id="conf-discount-row">
+                  <span>Descuento Cliente Frecuente (10%)</span>
+                  <span id="conf-discount">-$0.00</span>
+                </div>
+                <div class="flex justify-between font-body-sm text-body-sm text-on-surface-variant">
+                  <span>Impuestos IVA (8%)</span>
+                  <span id="conf-tax">$0.00</span>
+                </div>
+                <div class="flex justify-between font-title-lg text-title-lg text-on-surface font-bold pt-1">
+                  <span>Total Pagado</span>
+                  <span class="text-secondary font-headline-sm text-headline-sm" id="conf-total">$0.00</span>
+                </div>
+                <div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant mt-1">
+                  <span class="material-symbols-outlined text-[16px] text-on-surface">credit_card</span>
+                  <span id="conf-payment">Pago aprobado</span>
+                </div>
+              </div>
+              <div class="mt-space-md flex flex-col gap-space-xs">
+                <button class="w-full py-2.5 px-4 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-all flex items-center justify-center gap-2 font-label-md text-label-md" id="btnReceipt" type="button">
+                  <span class="material-symbols-outlined text-[18px]">download</span>
+                  <span>Descargar Recibo / Factura en PDF</span>
+                </button>
+                <a class="w-full py-3 px-4 rounded-lg bg-primary text-on-primary hover:bg-secondary transition-all flex items-center justify-center gap-2 font-label-md text-label-md shadow-md text-center" href="index.html#menu">
+                  <span class="material-symbols-outlined text-[18px]">restaurant_menu</span>
+                  <span>Volver al Menú Principal</span>
+                </a>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <section class="mt-space-lg text-center max-w-xl mx-auto py-space-md">
+          <div class="inline-flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container mb-space-xs">
+            <span class="material-symbols-outlined text-[18px]">spa</span>
+          </div>
+          <p class="font-headline-sm text-headline-sm text-on-surface italic">"¡Esperamos que disfrutes cada sorbo de este café de origen único!"</p>
+          <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-1 block">Cosechado a mano a 1,850 m.s.n.m. · Sierra Yara</span>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low border-t border-outline-variant/30">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-outline-variant/20">
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-headline-sm text-headline-sm text-on-surface">Sierra Yara Café</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Cultivado en las altas pendientes de niebla andina y tostado artesanalmente bajo estándares de comercio justo y regenerativo.</p>
+          <div class="inline-flex items-center gap-space-xs mt-space-xs px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container w-fit">
+            <span class="material-symbols-outlined text-[16px]">eco</span>
+            <span class="font-label-sm text-label-sm font-semibold">Finca Sostenible Certificada</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Horario de Cosecha &amp; Barra</span>
+          <div class="font-body-sm text-body-sm text-on-surface-variant space-y-1.5">
+            <div>
+              <p class="font-semibold text-on-surface">Lunes a Viernes</p>
+              <p>07:00 – 20:30 hrs</p>
+            </div>
+            <div>
+              <p class="font-semibold text-on-surface">Sábados &amp; Domingos</p>
+              <p>08:00 – 21:00 hrs</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Explorar Origen</span>
+          <ul class="font-body-sm text-body-sm text-on-surface-variant space-y-2">
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#menu">Varietales Geisha &amp; Borbón</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Métodos de Extracción</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Trazabilidad de Productores</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Nuestras Barras &amp; Terrazas</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Boletín de Tostaduría</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Suscríbete para lanzamientos exclusivos de microlotes y catas sensoriales.</p>
+          <form class="flex flex-col gap-2 mt-1" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('¡Gracias por suscribirte!');">
+            <input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/60 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary" placeholder="tu-correo@sierrayara.com" type="email">
+            <button class="w-full px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+        <div>© 2024 Sierra Yara Café. Creado con reverencia a la tierra y al grano.</div>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-on-surface transition-colors" href="#">Instagram</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Journal</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Privacidad</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/confirmacion.js"></script>
+</body>
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra Segura · Sierra Yara Café</title>
+  <meta name="description" content="Completa tus datos de contacto y elige tu método de pago favorito en Sierra Yara Café.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+</head>
+<body data-page="checkout" class="bg-surface text-on-surface font-body-md text-body-md antialiased">
+
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,24,16,0.05)] border-b border-outline-variant/40">
+    <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm shrink-0">
+        <a class="flex items-center gap-space-sm" href="index.html">
+          <img alt="Sierra Yara Café Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Dw7lbS0418jBCjqogvqCi5ObQuKkPSAGw90rlom4n0xoqnWF3q52FkuGSgPa_IthEStFCYg0dIf36926lOSQexO4xSaLutJNk01yZxYVvVGZnzJKwPyQkqG4aWeYkyb_DGPYibSJqNQpU1m5rAC_qKkxa6vwysA86CPvTU2_XwNH7kHm2WCOQ06i55xOYkafscu21DzhvS7S3hKinu6bzXEvyqAUD5RLL9Zf9AiXaOKMgdJF8Tem">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">Sierra Yara</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Café de Especialidad &amp; Origen</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav hidden lg:flex items-center gap-space-lg">
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="inicio" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="menu" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="nosotros" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="ubicaciones" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="contacto" href="index.html#extraccion">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-space-md">
+        <a aria-label="Carrito de compra" class="relative flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface" href="carrito.html">
+          <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+          <span class="cart-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-[20px] px-1 bg-primary-container text-on-primary font-label-sm text-[11px] font-bold rounded-full shadow-sm" data-cart-badge>0</span>
+        </a>
+        <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-surface border-t border-outline-variant/40 shadow-lg">
+      <nav class="max-w-7xl mx-auto px-gutter py-4 flex flex-col gap-2">
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <div class="relative w-full overflow-hidden bg-surface py-8 lg:py-12">
+      <div class="max-w-7xl mx-auto px-gutter">
+        <nav aria-label="Progreso de compra" class="flex items-center gap-space-xs text-label-sm font-label-sm text-on-surface-variant mb-space-sm">
+          <a class="hover:text-primary transition-colors flex items-center gap-1" href="carrito.html">
+            <span class="material-symbols-outlined text-[16px]">shopping_bag</span>
+            <span>Carrito</span>
+          </a>
+          <span class="text-outline-variant">/</span>
+          <span class="font-semibold text-primary flex items-center gap-1 bg-surface-container px-2.5 py-0.5 rounded-full">
+            <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            <span>Pago y Facturación</span>
+          </span>
+          <span class="text-outline-variant">/</span>
+          <span class="text-outline-variant select-none">Confirmación</span>
+        </nav>
+
+        <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-2 pb-6 border-b border-outline-variant/30">
+          <div>
+            <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">Finalizar Compra Segura</h1>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Conectando la cosecha de montaña directo a tu ritual diario.</p>
+          </div>
+          <div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm bg-secondary-container/40 px-3 py-1.5 rounded-full self-start md:self-auto">
+            <span class="material-symbols-outlined text-[18px]">verified_user</span>
+            <span>Pasarela Protegida TLS 1.3</span>
+          </div>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div class="lg:col-span-7 flex flex-col gap-8">
+            <section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+              <div class="flex items-center justify-between mb-5">
+                <div class="flex items-center gap-3">
+                  <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-on-primary font-title-md text-title-md">1</span>
+                  <h2 class="font-headline-sm text-headline-sm text-primary">Datos de Contacto y Recogida</h2>
+                </div>
+                <span class="font-label-sm text-label-sm text-secondary flex items-center gap-1">
+                  <span class="material-symbols-outlined text-[16px]">notifications_active</span>
+                  SMS en tiempo real
+                </span>
+              </div>
+              <div class="space-y-4">
+                <div>
+                  <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="checkout-name">Nombre completo</label>
+                  <div class="relative flex items-center">
+                    <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">person</span>
+                    <input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="checkout-name" placeholder="Ej. Mariana Morales" type="text" required>
+                  </div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="checkout-phone">
+                      Teléfono móvil
+                      <span class="font-normal text-body-sm text-on-surface-variant/80">(para avisar cuando esté listo)</span>
+                    </label>
+                    <div class="relative flex items-center">
+                      <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">phone_iphone</span>
+                      <input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="checkout-phone" placeholder="+506 8888 0000" type="tel" required>
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="checkout-email">Correo electrónico</label>
+                    <div class="relative flex items-center">
+                      <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">alternate_email</span>
+                      <input class="w-full pl-10 pr-4 py-2.5 rounded-lg bg-surface-container-low font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:bg-surface-container-lowest transition-all" id="checkout-email" placeholder="tu@correo.com" type="email" required>
+                    </div>
+                  </div>
+                </div>
+                <div class="pt-2">
+                  <label class="inline-flex items-center gap-2.5 cursor-pointer select-none">
+                    <input checked class="w-4 h-4 rounded text-secondary accent-secondary cursor-pointer" type="checkbox">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Guardar datos para compras más rápidas en Sierra Yara</span>
+                  </label>
+                </div>
+              </div>
+            </section>
+
+            <section class="bg-surface-container-lowest rounded-xl p-6 shadow-sm">
+              <div class="flex items-center gap-3 mb-5">
+                <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-on-primary font-title-md text-title-md">2</span>
+                <h2 class="font-headline-sm text-headline-sm text-primary">Selección de Método de Pago</h2>
+              </div>
+              <div class="grid grid-cols-2 gap-3 mb-6 sm:grid-cols-3" id="payment-methods-group">
+                <button class="payment-method-card flex flex-col items-center justify-center p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all relative text-center active-payment shadow-sm" data-type="card" type="button">
+                  <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center mb-2">
+                    <span class="material-symbols-outlined text-[18px]">credit_card</span>
+                  </div>
+                  <span class="font-title-md text-title-md text-on-surface text-center leading-tight">Tarjeta</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Crédito / Débito</span>
+                  <div class="status-dot absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></div>
+                </button>
+                <button class="payment-method-card flex flex-col items-center justify-center p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all relative text-center" data-type="wallet" type="button">
+                  <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-2">
+                    <span class="material-symbols-outlined text-[18px]">phone_android</span>
+                  </div>
+                  <span class="font-title-md text-title-md text-on-surface text-center leading-tight">Apple Pay</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">1 toque</span>
+                  <div class="status-dot hidden absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></div>
+                </button>
+                <button class="payment-method-card flex flex-col items-center justify-center p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all relative text-center" data-type="wallet" type="button">
+                  <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-2">
+                    <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+                  </div>
+                  <span class="font-title-md text-title-md text-on-surface text-center leading-tight">Google Pay</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Express</span>
+                  <div class="status-dot hidden absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></div>
+                </button>
+                <button class="payment-method-card flex flex-col items-center justify-center p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all relative text-center" data-type="bank" type="button">
+                  <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-2">
+                    <span class="material-symbols-outlined text-[18px]">currency_exchange</span>
+                  </div>
+                  <span class="font-title-md text-title-md text-on-surface text-center leading-tight">Sinpe / Bizum</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Transferencia</span>
+                  <div class="status-dot hidden absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></div>
+                </button>
+                <button class="payment-method-card flex flex-col items-center justify-center p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-all relative text-center" data-type="pagomovil" type="button">
+                  <div class="w-8 h-8 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center mb-2">
+                    <span class="material-symbols-outlined text-[18px]">payments</span>
+                  </div>
+                  <span class="font-title-md text-title-md text-on-surface text-center leading-tight">Pago Móvil</span>
+                  <span class="font-label-sm text-[11px] text-on-surface-variant mt-0.5">Al instante</span>
+                  <div class="status-dot hidden absolute top-2 right-2 w-2 h-2 rounded-full bg-secondary"></div>
+                </button>
+              </div>
+
+              <div class="p-5 rounded-xl bg-surface-container-low" id="card-details-section">
+                <div class="flex items-center justify-between mb-4">
+                  <div class="flex items-center gap-2">
+                    <span class="font-title-md text-title-md text-primary">Detalles de Tarjeta</span>
+                    <span class="px-2 py-0.5 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container">Encriptado</span>
+                  </div>
+                  <div class="flex items-center gap-1.5" id="brand-indicators">
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-[11px] font-bold text-on-surface transition-all" id="visa-badge">VISA</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-[11px] font-bold text-on-surface transition-all" id="mc-badge">Mastercard</span>
+                    <span class="px-2 py-0.5 rounded bg-surface-container-highest font-label-sm text-[11px] font-bold text-on-surface-variant transition-all" id="amex-badge">AMEX</span>
+                  </div>
+                </div>
+                <div class="space-y-4">
+                  <div>
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="card-number">Número de tarjeta</label>
+                    <div class="relative flex items-center">
+                      <span class="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[20px] pointer-events-none">lock</span>
+                      <input class="w-full pl-10 pr-12 py-2.5 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface tracking-wider placeholder:text-outline focus:outline-none transition-all" id="card-number" maxlength="19" placeholder="0000 0000 0000 0000" type="text" autocomplete="cc-number">
+                      <span class="material-symbols-outlined absolute right-3 text-secondary text-[22px]" id="detected-brand-icon">credit_card</span>
+                    </div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-4">
+                    <div>
+                      <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="card-expiry">Vencimiento (MM/AA)</label>
+                      <input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none transition-all" id="card-expiry" maxlength="5" placeholder="MM/AA" type="text" autocomplete="cc-exp" oninput="this.value=this.value.replace(/[^\d/]/g,'')">
+                    </div>
+                    <div>
+                      <div class="flex items-center justify-between mb-1.5">
+                        <label class="font-label-md text-label-md text-on-surface-variant" for="card-cvc">Código CVC / CVV</label>
+                        <div class="group relative cursor-pointer">
+                          <span class="material-symbols-outlined text-[16px] text-on-surface-variant hover:text-primary">info</span>
+                          <div class="absolute right-0 bottom-full mb-1.5 hidden group-hover:block w-48 p-2 rounded-lg bg-inverse-surface text-inverse-on-surface font-body-sm text-xs shadow-md z-10">
+                            Los 3 dígitos al reverso de tu tarjeta (o 4 dígitos al frente si es AMEX).
+                          </div>
+                        </div>
+                      </div>
+                      <input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none transition-all" id="card-cvc" maxlength="4" placeholder="123" type="password" autocomplete="cc-csc" oninput="this.value=this.value.replace(/[^\d]/g,'')">
+                    </div>
+                  </div>
+                  <div>
+                    <label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="card-holder">Nombre impreso en la tarjeta</label>
+                    <input class="w-full px-3.5 py-2.5 rounded-lg bg-surface-container-lowest font-body-md text-body-md text-on-surface uppercase placeholder:text-outline focus:outline-none transition-all" id="card-holder" placeholder="COMO APARECE EN EL PLÁSTICO" type="text">
+                  </div>
+                </div>
+                <div class="mt-5 pt-4 border-t border-outline-variant/30 flex items-center gap-3 text-on-surface-variant">
+                  <span class="material-symbols-outlined text-secondary text-[22px]">shield</span>
+                  <div class="flex flex-col">
+                    <span class="font-label-sm text-label-sm font-semibold text-on-surface">Transacción encriptada con tecnología SSL de 256 bits</span>
+                    <span class="font-body-sm text-[12px] text-on-surface-variant">Tus credenciales financieras nunca se almacenan en nuestros servidores. Cumplimiento estricto PCI-DSS Nivel 1.</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hidden p-5 rounded-xl bg-surface-container text-center" id="wallet-info-section">
+                <span class="material-symbols-outlined text-[32px] text-secondary mb-2">contactless</span>
+                <h3 class="font-title-md text-title-md text-primary">Autenticación Biométrica Rápida</h3>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mt-1 max-w-md mx-auto">
+                  Al hacer clic en el botón de pago, se abrirá la ventana de autorización con FaceID, TouchID o tu cuenta vinculada.
+                </p>
+              </div>
+
+              <div class="hidden p-5 rounded-xl bg-surface-container-low" id="bank-info-section">
+                <div class="flex items-center gap-2 mb-2 text-primary font-title-md text-title-md">
+                  <span class="material-symbols-outlined text-[20px] text-secondary">account_balance</span>
+                  <span>Instrucciones Sinpe Móvil / Bizum</span>
+                </div>
+                <p class="font-body-sm text-body-sm text-on-surface-variant mb-3">
+                  Envía el monto exacto de <strong class="text-on-surface" id="sinpe-amount">$0.00</strong> (o su equivalente en moneda local) al número registrado:
+                </p>
+                <div class="p-3 bg-surface-container-lowest rounded-lg font-title-md text-title-md text-secondary font-mono flex items-center justify-between">
+                  <span>+506 8800 9272 (Sierra Yara Café S.A.)</span>
+                  <button class="text-label-sm text-primary underline" data-copy="+50688009272" type="button">Copiar</button>
+                </div>
+              </div>
+
+              <div class="hidden p-5 rounded-xl bg-surface-container-low space-y-4" id="pagomovil-details-section">
+                <div class="flex items-center justify-between pb-3 border-b border-outline-variant/30">
+                  <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-[20px] text-secondary">payments</span>
+                    <span class="font-title-md text-title-md text-primary">Datos para Pago Móvil</span>
+                  </div>
+                  <span class="px-2.5 py-0.5 rounded text-[11px] font-label-sm bg-secondary-container text-on-secondary-container font-semibold">Confirmación Inmediata</span>
+                </div>
+                <div class="p-4 rounded-xl bg-surface-container-lowest border border-outline-variant/40 space-y-3">
+                  <div class="flex items-center justify-between">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Banco receptor:</span>
+                    <span class="font-title-md text-title-md text-on-surface font-semibold">BAC Credomatic S.A.</span>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Cédula Jurídica:</span>
+                    <div class="flex items-center gap-2">
+                      <span class="font-mono font-semibold text-on-surface text-body-sm">3-102-883491</span>
+                      <button class="text-label-sm text-secondary hover:text-primary underline text-[12px]" data-copy="3-102-883491" type="button">Copiar</button>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Teléfono asociado:</span>
+                    <div class="flex items-center gap-2">
+                      <span class="font-mono font-semibold text-on-surface text-body-sm">+506 8800 9272</span>
+                      <button class="text-label-sm text-secondary hover:text-primary underline text-[12px]" data-copy="50688009272" type="button">Copiar</button>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-outline-variant/20">
+                    <span class="font-body-sm text-body-sm text-on-surface-variant">Monto a enviar:</span>
+                    <span class="font-title-md text-title-md font-semibold text-on-surface" id="pagomovil-amount">$0.00</span>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <div class="p-4 rounded-xl bg-surface-container-high/60 flex items-start gap-3">
+              <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">park</span>
+              <div>
+                <span class="font-label-sm text-label-sm font-semibold text-primary block">Huella Positiva en Cada Taza</span>
+                <p class="font-body-sm text-body-sm text-on-surface-variant">Con esta compra contribuyes con un 2% al programa de restauración forestal de cuencas en la Sierra de Tarrazú.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5 lg:sticky lg:top-24">
+            <div class="relative bg-surface-container-lowest rounded-2xl shadow-md overflow-hidden p-6 md:p-7">
+              <div class="flex items-center justify-between pb-4 border-b border-outline-variant/30">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-primary text-[20px]">receipt_long</span>
+                  <h2 class="font-headline-sm text-headline-sm text-primary">Resumen de Orden</h2>
+                </div>
+                <span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container text-on-surface-variant" id="order-number">#SY-0000</span>
+              </div>
+
+              <div class="mt-4 p-3.5 rounded-xl bg-secondary-container/30 flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">storefront</span>
+                <div class="flex flex-col">
+                  <span class="font-label-sm text-label-sm font-bold text-on-secondary-container">Modalidad Seleccionada</span>
+                  <span class="font-title-md text-title-md text-on-surface" id="mode-summary">Recoger en Tienda - Sede Centro</span>
+                  <span class="font-body-sm text-body-sm text-secondary font-semibold mt-0.5">Hoy estimado: 10:30 AM (en 25 min)</span>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <div class="flex items-center justify-between text-label-sm font-label-sm text-on-surface-variant uppercase tracking-wider mb-2">
+                  <span id="receipt-count-label">Productos (0)</span>
+                  <button class="hover:text-primary transition-colors flex items-center gap-0.5" id="receipt-toggle-btn" type="button">
+                    <span id="toggle-label">Ver detalles</span>
+                    <span class="material-symbols-outlined text-[16px]" id="toggle-icon">expand_less</span>
+                  </button>
+                </div>
+                <div class="space-y-3 transition-all duration-300 overflow-hidden" id="receipt-items-list"></div>
+              </div>
+
+              <div class="mt-5 space-y-2.5 pt-3 border-t border-outline-variant/30 font-body-sm text-body-sm">
+                <div class="flex justify-between text-on-surface-variant">
+                  <span>Subtotal</span>
+                  <span class="font-medium text-on-surface" id="receipt-subtotal">$0.00</span>
+                </div>
+                <div class="flex justify-between text-secondary">
+                  <span class="flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[16px]">local_offer</span>
+                    Descuento Cliente Frecuente (10%)
+                  </span>
+                  <span class="font-semibold" id="receipt-discount">$0.00</span>
+                </div>
+                <div class="flex justify-between text-on-surface-variant">
+                  <span>Impuestos IVA (8%)</span>
+                  <span class="font-medium text-on-surface" id="receipt-tax">$0.00</span>
+                </div>
+                <div class="flex justify-between text-on-surface-variant">
+                  <span>Servicio de empaque ecológico</span>
+                  <span class="font-semibold text-secondary">Gratis</span>
+                </div>
+                <div class="pt-4 border-t border-outline-variant/40 flex items-baseline justify-between">
+                  <div>
+                    <span class="font-headline-sm text-headline-sm text-primary block leading-none">Total a Pagar</span>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Moneda base USD</span>
+                  </div>
+                  <div class="text-right">
+                    <span class="font-display-hero text-[34px] lg:text-[38px] text-primary leading-none font-bold tracking-tight" id="receipt-total">$0.00</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-2">
+                <button class="w-full py-4 px-6 rounded-xl bg-primary-container hover:bg-secondary text-on-primary font-title-lg text-title-lg font-semibold flex items-center justify-center gap-3 shadow-md hover:shadow-lg active:scale-[0.99] transition-all duration-200 group" id="pay-button" type="button">
+                  <span class="material-symbols-outlined text-[22px] transition-transform group-hover:scale-110">lock</span>
+                  <span id="pay-button-text">Confirmar y Pagar $0.00</span>
+                </button>
+                <div class="flex items-center justify-center gap-2 mt-3 text-label-sm font-label-sm text-on-surface-variant text-center">
+                  <span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+                  <span>Notificación inmediata a baristas al confirmar</span>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 rounded-xl bg-surface-container flex items-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-secondary text-on-secondary flex items-center justify-center shrink-0">
+                  <span class="material-symbols-outlined text-[18px]">verified</span>
+                </div>
+                <div>
+                  <h3 class="font-label-md text-label-md font-semibold text-on-surface">Promesa de Calidad Sierra Yara</h3>
+                  <p class="font-body-sm text-[12px] text-on-surface-variant mt-0.5 leading-relaxed">
+                    Satisfacción garantizada. Si tu café no está a tu gusto exacto de temperatura o perfil de extracción, lo preparamos de nuevo sin costo alguno.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mt-5 -mb-6 -mx-6 md:-mb-7 md:-mx-7 h-3 bg-repeat-x opacity-40" style="background-image: radial-gradient(circle at 6px 0px, transparent 5px, currentColor 6px); background-size: 12px 12px; color: #eae8e4;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="w-full bg-surface-container-low border-t border-outline-variant/30">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-outline-variant/20">
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-headline-sm text-headline-sm text-on-surface">Sierra Yara Café</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Cultivado en las altas pendientes de niebla andina y tostado artesanalmente bajo estándares de comercio justo y regenerativo.</p>
+          <div class="inline-flex items-center gap-space-xs mt-space-xs px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container w-fit">
+            <span class="material-symbols-outlined text-[16px]">eco</span>
+            <span class="font-label-sm text-label-sm font-semibold">Finca Sostenible Certificada</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Horario de Cosecha &amp; Barra</span>
+          <div class="font-body-sm text-body-sm text-on-surface-variant space-y-1.5">
+            <div>
+              <p class="font-semibold text-on-surface">Lunes a Viernes</p>
+              <p>07:00 – 20:30 hrs</p>
+            </div>
+            <div>
+              <p class="font-semibold text-on-surface">Sábados &amp; Domingos</p>
+              <p>08:00 – 21:00 hrs</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Explorar Origen</span>
+          <ul class="font-body-sm text-body-sm text-on-surface-variant space-y-2">
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#menu">Varietales Geisha &amp; Borbón</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Métodos de Extracción</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Trazabilidad de Productores</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Nuestras Barras &amp; Terrazas</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Boletín de Tostaduría</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Suscríbete para lanzamientos exclusivos de microlotes y catas sensoriales.</p>
+          <form class="flex flex-col gap-2 mt-1" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('¡Gracias por suscribirte!');">
+            <input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/60 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary" placeholder="tu-correo@sierrayara.com" type="email">
+            <button class="w-full px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+        <div>© 2024 Sierra Yara Café. Creado con reverencia a la tierra y al grano.</div>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-on-surface transition-colors" href="#">Instagram</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Journal</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Privacidad</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/checkout.js"></script>
+</body>
+</html>

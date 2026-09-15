@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Digital · Sierra Yara Café</title>
+  <meta name="description" content="Tostaduría y barra de autor. Cafés de origen único, repostería artesanal y desayunos & brunch en Sierra Yara Café.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="assets/js/tailwind.config.js"></script>
+</head>
+<body data-page="menu" class="bg-surface text-on-surface font-body-md text-body-md antialiased">
+
+  <header class="fixed top-0 left-0 right-0 w-full z-50 bg-surface/85 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,24,16,0.05)] border-b border-outline-variant/40">
+    <div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md">
+      <div class="flex items-center gap-space-sm shrink-0">
+        <a class="flex items-center gap-space-sm" href="index.html">
+          <img alt="Sierra Yara Café Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3Dw7lbS0418jBCjqogvqCi5ObQuKkPSAGw90rlom4n0xoqnWF3q52FkuGSgPa_IthEStFCYg0dIf36926lOSQexO4xSaLutJNk01yZxYVvVGZnzJKwPyQkqG4aWeYkyb_DGPYibSJqNQpU1m5rAC_qKkxa6vwysA86CPvTU2_XwNH7kHm2WCOQ06i55xOYkafscu21DzhvS7S3hKinu6bzXEvyqAUD5RLL9Zf9AiXaOKMgdJF8Tem">
+          <div class="flex flex-col">
+            <span class="font-headline-sm text-headline-sm text-on-surface leading-none tracking-tight">Sierra Yara</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant tracking-wider uppercase mt-space-xs">Café de Especialidad &amp; Origen</span>
+          </div>
+        </a>
+      </div>
+      <nav class="header-nav hidden lg:flex items-center gap-space-lg">
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="inicio" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="menu" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="nosotros" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="ubicaciones" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface-variant hover:text-on-surface transition-colors pb-1 border-b-2 border-transparent" data-page="contacto" href="index.html#extraccion">Contacto</a>
+      </nav>
+      <div class="flex items-center gap-space-md">
+        <div class="relative hidden md:flex items-center">
+          <span class="material-symbols-outlined absolute left-3 text-on-surface-variant text-[20px] pointer-events-none">search</span>
+          <input class="w-56 lg:w-64 pl-9 pr-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant/50 font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/70 focus:outline-none focus:border-secondary transition-all" placeholder="Buscar café, repostería..." type="text">
+        </div>
+        <a aria-label="Carrito de compra" class="relative flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface" href="carrito.html">
+          <span class="material-symbols-outlined text-[24px]">shopping_bag</span>
+          <span class="cart-badge absolute -top-1 -right-1 flex items-center justify-center min-w-[20px] h-[20px] px-1 bg-primary-container text-on-primary font-label-sm text-[11px] font-bold rounded-full shadow-sm" data-cart-badge>0</span>
+        </a>
+        <div class="hidden md:flex items-center pl-space-xs">
+          <a class="flex items-center rounded-full ring-1 ring-outline-variant/60 hover:ring-secondary transition-all" href="#">
+            <img alt="Perfil" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDA_wbV3JA8WbVcGPImXpKvNpcBcxstzW-Qp7qXy0MLUDC4zPyA6K03qKIsyAw3zkZ1Zcp__iEWZ2e00mJBenGg7NoL8zymkQitmP9WgNoQo-OUPFX4obv0AC57IJ5b3n9uO2gNvHohJ04DEnLq7aOyCP2IsdFGkZHy9ynN_XG8c75pE8kfI2BOrbnJoKWOoPvgASothMnW7QihCbmdJ8Iq-o5isTQh3QpdDbf1Yj9z6XZB__2UHBxe">
+          </a>
+        </div>
+        <button id="menu-toggle" aria-label="Abrir menú" class="lg:hidden flex items-center justify-center p-2 rounded-full hover:bg-surface-container transition-colors text-on-surface">
+          <span class="material-symbols-outlined text-[24px]">menu</span>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden lg:hidden bg-surface border-t border-outline-variant/40 shadow-lg">
+      <nav class="max-w-7xl mx-auto px-gutter py-4 flex flex-col gap-2">
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html">Inicio</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#menu">Menú</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Nosotros</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Ubicaciones</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="index.html#extraccion">Contacto</a>
+        <a class="font-title-md text-title-md text-on-surface hover:text-primary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container" href="carrito.html">Mi Canasta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- Banner Editorial e Intro -->
+    <section class="relative w-full overflow-hidden bg-surface-container-low px-gutter py-space-xl">
+      <div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-container/40 blur-3xl pointer-events-none"></div>
+      <div class="absolute left-10 bottom-0 w-72 h-72 rounded-full bg-tertiary-fixed/30 blur-2xl pointer-events-none"></div>
+      <div class="relative max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-end justify-between gap-space-lg">
+        <div class="max-w-2xl flex flex-col">
+          <div class="inline-flex items-center gap-2 mb-space-xs">
+            <span class="w-8 h-[1px] bg-secondary"></span>
+            <span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">Tostaduría &amp; Barra de Autor</span>
+          </div>
+          <h1 class="font-display-hero text-headline-lg md:text-display-hero text-on-surface leading-tight tracking-tight">
+            Nuestras Cosechas &amp; Creaciones Artesanales
+          </h1>
+          <p class="font-body-lg text-body-lg text-on-surface-variant mt-space-sm max-w-xl">
+            Granos de origen único cosechados a mano a más de 1,800m de altura bajo la niebla andina, combinados con panadería lenta y técnicas contemporáneas.
+          </p>
+        </div>
+        <div class="flex items-center gap-space-md p-space-sm bg-surface-container-lowest/80 backdrop-blur rounded-xl shadow-sm self-stretch md:self-auto">
+          <div class="flex flex-col px-space-sm">
+            <span class="font-title-lg text-title-lg text-primary-container font-bold">+1,850m</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Altitud Media</span>
+          </div>
+          <div class="w-[1px] h-8 bg-surface-variant"></div>
+          <div class="flex flex-col px-space-sm">
+            <span class="font-title-lg text-title-lg text-secondary font-bold">87.5 SCA</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Puntaje Catación</span>
+          </div>
+          <div class="w-[1px] h-8 bg-surface-variant"></div>
+          <div class="flex flex-col px-space-sm">
+            <span class="font-title-lg text-title-lg text-on-tertiary-container font-bold">100%</span>
+            <span class="font-label-sm text-label-sm text-on-surface-variant">Orgánico</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filtros de navegación -->
+    <section id="menu" class="sticky top-20 z-40 bg-surface/95 backdrop-blur-md py-space-md shadow-sm">
+      <div class="max-w-7xl mx-auto px-gutter flex flex-col gap-space-md">
+        <div class="flex items-center gap-space-xs overflow-x-auto pb-1 scrollbar-none" id="categories-container">
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-secondary text-on-secondary shadow-sm" data-filter="all" type="button">Todos los productos</button>
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-filter="calientes" type="button">Cafés Calientes</button>
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-filter="frias" type="button">Bebidas Frías</button>
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-filter="reposteria" type="button">Repostería Artesanal</button>
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-filter="brunch" type="button">Desayunos &amp; Brunch</button>
+          <button class="category-btn whitespace-nowrap px-space-md py-2 rounded-full font-label-md text-label-md transition-all bg-surface-container text-on-surface hover:bg-surface-container-high" data-filter="granos" type="button">Granos Sierra Yara (250g / 500g)</button>
+        </div>
+        <div class="flex flex-wrap items-center justify-between gap-space-sm pt-2 bg-surface-container-lowest/60 rounded-lg px-space-md py-space-xs">
+          <div class="flex items-center gap-space-md flex-wrap">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant">local_fire_department</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Tueste:</span>
+              <div class="inline-flex gap-1">
+                <button class="roast-btn text-xs px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm hover:bg-surface-variant transition-colors" type="button">Claro</button>
+                <button class="roast-btn text-xs px-2.5 py-1 rounded bg-secondary-container text-on-secondary-container font-label-sm font-semibold" type="button">Medio</button>
+                <button class="roast-btn text-xs px-2.5 py-1 rounded bg-surface-container text-on-surface font-label-sm hover:bg-surface-variant transition-colors" type="button">Oscuro</button>
+              </div>
+            </div>
+            <div class="hidden sm:flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px] text-on-surface-variant">psychiatry</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Perfil:</span>
+              <div class="inline-flex gap-1.5 flex-wrap">
+                <span class="profile-chip px-2 py-0.5 rounded-full bg-surface-container text-[11px] font-label-sm text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">Afrutado</span>
+                <span class="profile-chip px-2 py-0.5 rounded-full bg-surface-container text-[11px] font-label-sm text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">Achocolatado</span>
+                <span class="profile-chip px-2 py-0.5 rounded-full bg-surface-container text-[11px] font-label-sm text-on-surface cursor-pointer hover:bg-surface-variant transition-colors">Floral</span>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+            <span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+            <span>6 opciones disponibles hoy</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid de productos -->
+    <main class="w-full max-w-7xl mx-auto px-gutter py-space-xl">
+      <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-space-lg"></div>
+    </main>
+
+    <!-- Perfil Sensorial / Extracción -->
+    <section id="extraccion" class="w-full bg-surface-container-low py-space-xl my-space-md">
+      <div class="max-w-7xl mx-auto px-gutter grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
+        <div class="lg:col-span-5 flex flex-col gap-space-sm">
+          <span class="font-label-sm text-label-sm uppercase tracking-wider text-secondary font-semibold">Técnicas en Barra</span>
+          <h3 class="font-headline-lg text-headline-lg text-on-surface">Extracción Guiada por Baristas</h3>
+          <p class="font-body-md text-body-md text-on-surface-variant">
+            Cada varietal cuenta con un perfil de extracción optimizado. Ya sea vertido manual en Chemex, V60 o extracción espresso a 9 bares de presión constante, extraemos el dulzor natural y la acidez viva del grano.
+          </p>
+          <div class="flex items-center gap-space-lg pt-space-xs">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary">water_drop</span>
+              <span class="font-body-sm text-body-sm font-medium text-on-surface">Agua Mineralizada 92°C</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-secondary">timer</span>
+              <span class="font-body-sm text-body-sm font-medium text-on-surface">Ratio 1:16 Preciso</span>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-7 bg-surface-container-lowest p-space-lg rounded-xl shadow-sm">
+          <span class="font-title-md text-title-md font-semibold text-on-surface block mb-space-sm">Rueda Sensorial Sierra Yara: Geisha vs. Borbón</span>
+          <div class="flex flex-col gap-space-sm">
+            <div>
+              <div class="flex justify-between font-label-sm text-label-sm mb-1 text-on-surface">
+                <span>Acidez Brillante (Cítrica / Málica)</span>
+                <span class="font-semibold text-secondary">9.2 / 10</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                <div class="h-full bg-secondary rounded-full" style="width: 92%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between font-label-sm text-label-sm mb-1 text-on-surface">
+                <span>Dulzura Natural (Miel y Panela)</span>
+                <span class="font-semibold text-on-tertiary-container">8.8 / 10</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                <div class="h-full bg-tertiary-fixed-dim rounded-full" style="width: 88%;"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between font-label-sm text-label-sm mb-1 text-on-surface">
+                <span>Cuerpo &amp; Sedosidad</span>
+                <span class="font-semibold text-primary-container">8.4 / 10</span>
+              </div>
+              <div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+                <div class="h-full bg-primary-container rounded-full" style="width: 84%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner de barista -->
+    <section class="w-full max-w-7xl mx-auto px-gutter pb-space-xl">
+      <div class="relative overflow-hidden rounded-xl bg-primary-container text-on-primary p-space-lg md:p-space-xl shadow-md flex flex-col md:flex-row items-center justify-between gap-space-lg">
+        <div class="absolute -left-12 -bottom-12 w-64 h-64 rounded-full bg-secondary/30 blur-2xl pointer-events-none"></div>
+        <div class="relative flex items-center gap-space-md z-10">
+          <div class="flex items-center justify-center w-14 h-14 rounded-full bg-surface-container-lowest/10 backdrop-blur-sm text-tertiary-fixed-dim shrink-0">
+            <span class="material-symbols-outlined text-[30px]">support_agent</span>
+          </div>
+          <div class="flex flex-col">
+            <h4 class="font-title-lg text-title-lg text-on-primary font-bold">¿Tienes dudas sobre el tueste o método de preparación?</h4>
+            <p class="font-body-md text-body-md text-on-primary-container max-w-xl mt-0.5">Consulta en tiempo real con nuestros baristas certificados para elegir el molido exacto según tu cafetera en casa.</p>
+          </div>
+        </div>
+        <div class="relative flex items-center gap-space-sm z-10 w-full md:w-auto shrink-0">
+          <a class="w-full md:w-auto px-space-lg py-3 rounded-lg bg-surface-container-lowest text-on-surface hover:bg-secondary-container hover:text-on-secondary-container transition-all font-label-md text-label-md font-semibold flex items-center justify-center gap-2 shadow-sm" href="#">
+            <span class="material-symbols-outlined text-[18px]">chat</span>
+            <span>Hablar con Barista</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast de carrito -->
+  <div class="fixed bottom-6 right-6 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-surface-container-lowest text-on-surface px-space-md py-space-sm rounded-xl shadow-xl flex items-center gap-3" id="cart-toast">
+    <div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+      <span class="material-symbols-outlined text-[18px]">check</span>
+    </div>
+    <div class="flex flex-col">
+      <span class="font-title-md text-title-md font-semibold" id="toast-title">Agregado al Carrito</span>
+      <span class="font-body-sm text-body-sm text-on-surface-variant" id="toast-subtitle">Producto listo para degustar</span>
+    </div>
+  </div>
+
+  <footer class="w-full bg-surface-container-low border-t border-outline-variant/30">
+    <div class="max-w-7xl mx-auto px-gutter py-space-xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-xl pb-space-xl border-b border-outline-variant/20">
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-headline-sm text-headline-sm text-on-surface">Sierra Yara Café</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Cultivado en las altas pendientes de niebla andina y tostado artesanalmente bajo estándares de comercio justo y regenerativo.</p>
+          <div class="inline-flex items-center gap-space-xs mt-space-xs px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container w-fit">
+            <span class="material-symbols-outlined text-[16px]">eco</span>
+            <span class="font-label-sm text-label-sm font-semibold">Finca Sostenible Certificada</span>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Horario de Cosecha &amp; Barra</span>
+          <div class="font-body-sm text-body-sm text-on-surface-variant space-y-1.5">
+            <div>
+              <p class="font-semibold text-on-surface">Lunes a Viernes</p>
+              <p>07:00 – 20:30 hrs</p>
+            </div>
+            <div>
+              <p class="font-semibold text-on-surface">Sábados &amp; Domingos</p>
+              <p>08:00 – 21:00 hrs</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Explorar Origen</span>
+          <ul class="font-body-sm text-body-sm text-on-surface-variant space-y-2">
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#menu">Varietales Geisha &amp; Borbón</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Métodos de Extracción</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Trazabilidad de Productores</a></li>
+            <li><a class="hover:text-on-surface transition-colors" href="index.html#extraccion">Nuestras Barras &amp; Terrazas</a></li>
+          </ul>
+        </div>
+        <div class="flex flex-col gap-space-sm">
+          <span class="font-title-md text-title-md text-on-surface uppercase tracking-wide">Boletín de Tostaduría</span>
+          <p class="font-body-sm text-body-sm text-on-surface-variant">Suscríbete para lanzamientos exclusivos de microlotes y catas sensoriales.</p>
+          <form class="flex flex-col gap-2 mt-1" onsubmit="event.preventDefault(); this.querySelector('input').value=''; alert('¡Gracias por suscribirte!');">
+            <input class="w-full px-3 py-2 rounded-lg bg-surface-container-lowest border border-outline-variant/60 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-secondary" placeholder="tu-correo@sierrayara.com" type="email">
+            <button class="w-full px-4 py-2 rounded-lg bg-primary-container text-on-primary font-label-md text-label-md hover:bg-secondary hover:text-on-secondary transition-colors" type="submit">Suscribirme</button>
+          </form>
+        </div>
+      </div>
+      <div class="pt-space-md flex flex-col md:flex-row items-center justify-between gap-space-md text-on-surface-variant font-label-sm text-label-sm">
+        <div>© 2024 Sierra Yara Café. Creado con reverencia a la tierra y al grano.</div>
+        <div class="flex items-center gap-space-lg">
+          <a class="hover:text-on-surface transition-colors" href="#">Instagram</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Journal</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Privacidad</a>
+          <a class="hover:text-on-surface transition-colors" href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/site.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

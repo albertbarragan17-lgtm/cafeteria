@@ -1,0 +1,26 @@
+/* Sierra Yara Cafi - estilos base compartidos */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+body.menu-open {
+  overflow: hidden;
+}
