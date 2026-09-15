@@ -58,8 +58,36 @@
     wireCardDetection();
     wireCopy();
     wireToggleReceipt();
+    wirePlayWhatsApp();
     wirePay();
     if (window.SY_CART) SY_CART.updateBadge();
+  }
+
+  var WHATSAPP_NUMBER = '50688009272';
+
+  function wirePlayWhatsApp() {
+    var btn = document.getElementById('whatsapp-btn');
+    if (!btn) return;
+    var cart = SY_CART.getCart();
+    if (cart.length === 0) {
+      btn.classList.add('pointer-events-none', 'opacity-50');
+      return;
+    }
+    var t = SY_CART.totals(cart);
+    var lines = ['Hola Sierra Yara Cafe, quiero confirmar mi pedido:'];
+    cart.forEach(function (item) {
+      lines.push('- ' + item.qty + 'x ' + item.name + ' (' + SY_CART.money(item.price * item.qty) + ')');
+    });
+    if (t.hasCoupon) lines.push('Descuento ORIGEN10: -' + SY_CART.money(t.discount));
+    lines.push('Total a pagar: ' + SY_CART.money(t.total));
+    var mode = localStorage.getItem(MODE_KEY) === 'dinein' ? 'Consumir en local' : 'Recoger en tienda';
+    lines.push('Modalidad: ' + mode);
+    var name = (document.getElementById('checkout-name').value || '').trim();
+    if (name) lines.push('A nombre de: ' + name);
+
+    btn.href = 'https://wa.me/' + WHATSAPP_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
+    btn.target = '_blank';
+    btn.setAttribute('rel', 'noopener noreferrer');
   }
 
   function wirePaymentMethods() {
